@@ -1,0 +1,31 @@
+﻿@model Band
+@{
+    ViewBag.Title = "Add Band";
+}
+
+    <h2>Add an employee</h2>
+
+    <form asp-controller="Band" asp-action="Create">
+        <label asp-for="Name">Band name:</label>
+        <input type="text" style="width: 300px;" asp-for="Name" /><br />
+
+        <label asp-for="Description">Description:</label>
+        <input type="text" style="width: 300px;" asp-for="Description" /><br />
+
+        <label asp-for="PerformanceTime">Performance time:</label>
+        <input type="datetime-local"
+               asp-for="PerformanceTime"
+               min="@CloseUpBåten2025BandsApp.Web.Models.PerformanceTimeLimits.MinTime.ToString("yyyy-MM-ddTHH:mm")"
+               max="@CloseUpBåten2025BandsApp.Web.Models.PerformanceTimeLimits.MaxTime.ToString("yyyy-MM-ddTHH:mm")"
+               style="width: 300px;" />
+
+        <input type="submit" style="width: 300px;" value="Save" />
+    </form>
+    @if (ViewData.ModelState.ErrorCount > 0)
+    {
+        <div asp-validation-summary="All">
+            <ul>
+            </ul>
+        </div>
+    }
+    <h2><a href="/">Back to Index</a></h2>

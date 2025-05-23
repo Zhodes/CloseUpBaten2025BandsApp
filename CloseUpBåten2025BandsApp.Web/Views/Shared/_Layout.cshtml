@@ -1,0 +1,23 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://unpkg.com/@@picocss/pico@@latest/css/pico.classless.min.css">
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav>
+        <ul><li><strong>Close Up Båten Band 2025</strong></li></ul>
+        <ol>
+            <li><a asp-controller="Bands" asp-action="Index">Home</a></li>
+            <li><a asp-controller="Bands" asp-action="Create"></a>Add Band</li>
+        </ol>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+    <footer style="margin: 50px;">&copy; Zhodes 2025</footer>
+    @RenderSection("scripts", false)
+</body>
+</html>
