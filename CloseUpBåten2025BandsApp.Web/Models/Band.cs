@@ -19,7 +19,5 @@
             }
         }
         public string[]? Albums { get; set; }
-
-
     }
 }

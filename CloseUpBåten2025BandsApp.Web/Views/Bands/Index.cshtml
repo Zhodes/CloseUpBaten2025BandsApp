@@ -1,25 +1,15 @@
-﻿@model CloseUpBåten2025BandsApp.Web.Models.Band[]
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@model IndexVM
 
-﻿
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Employees</title>
-    <link rel="stylesheet" href="https://unpkg.com/@@picocss/pico@@latest/css/pico.classless.min.css">
-</head>
-<body>
-    <div style="margin: 50px;">
-        <h2>Employees</h2>
-        <ul>
-            @foreach (var band in Model)
-            {
-                <li>
-                    <a asp-action="Details" asp-route-id="@band.Id">@band.Name</a>
-                </li>
-            }
-        </ul>
-        <h2><a href="/Create">Add a Band</a></h2>
-    </div>
-</body>
-</html>
+@{
+    ViewBag.Title = "Bands List";
+}
+
+<h2>Bands</h2>
+<ul>
+    @foreach (var band in Model.BandVMs)
+    {
+        <li>
+            <a asp-controller="Bands" asp-action="Details" asp-route-id="@band.Id">@band.Name</a>
+        </li>
+    }
+</ul>
